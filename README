@@ -1,0 +1,3 @@
+A Chef cookbook based on the tutorial: https://www.digitalocean.com/community/tutorials/how-to-serve-django-applications-with-uwsgi-and-nginx-on-ubuntu-16-04
+
+Currently pulls the following git repo for the django app in question: https://github.com/saw106/django-chef
