@@ -9,5 +9,6 @@
 
 include_recipe 'apt'
 include_recipe 'django_fun::installs'
+include_recipe 'django_fun::djangopython'
 include_recipe 'django_fun::server_parts'
 include_recipe 'django_fun::uwsgi'
