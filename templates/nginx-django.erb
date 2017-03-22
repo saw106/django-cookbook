@@ -1,0 +1,18 @@
+upstream django {
+        server unix:/tmp/djangochef.sock;
+    }
+
+server {
+    listen 0.0.0.0:80;
+    server_name 192.168.33.33;
+
+    location = /favicon.ico {access_log off; log_not_found off;}
+    location /static/ {
+        root /home/vagrant/django-stuff;
+    }
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass django;
+    }
+}

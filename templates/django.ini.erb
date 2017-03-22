@@ -1,0 +1,14 @@
+[uwsgi]
+project = django-stuff
+base = /home/vagrant
+
+chdir = %(base)/%(project)
+home = /home/vagrant/django-stuff
+module = djangochef.wsgi:application
+
+master = true
+processes = 5
+
+socket = /tmp/djangochef.sock
+chmod-socket = 666
+vacuum = true
