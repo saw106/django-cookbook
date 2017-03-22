@@ -37,17 +37,6 @@ execute 'get virtualenv parts' do
 	not_if {::File.exist?('/usr/local/bin/virtualenv')}
 end
 
-# bash 'edit bashrc' do
-# 	cwd '/home/vagrant'
-# 	code <<-EOH
-# 	echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> /etc/bash.bashrc
-# 	echo "export WORKON_HOME=~/Env" >> /etc/bash.bashrc
-# 	echo "source /usr/local/bin/virtualenvwrapper.sh" >> /etc/bash.bashrc
-# 	EOH
-# 	action :run
-# 	only_if {`cat /etc/bash.bashrc`.match('WORKON_HOME') == nil}
-# end
-
 bash 'create env' do
 	cwd '/home/vagrant'
 	code <<-EOH
