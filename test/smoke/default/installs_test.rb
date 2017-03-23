@@ -14,6 +14,10 @@ describe package 'git' do
     it { should be_installed }
 end
 
+describe package 'curl' do 
+    it { should be_installed }
+end
+
 describe command 'django-admin --version' do
     its('stdout') { should match /1.10.6/}
 end
@@ -27,5 +31,9 @@ describe package 'nginx' do
 end
 
 describe directory '/home/vagrant/django-stuff' do
+    it { should exist }
+end
+
+describe file '/usr/local/bin/virtualenv' do
     it { should exist }
 end

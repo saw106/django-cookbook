@@ -14,6 +14,10 @@ package 'nginx' do
 	action :install
 end
 
+package 'curl' do
+	action :install
+end
+
 execute 'install django' do
 	command 'pip3 install django'
 	action :run
